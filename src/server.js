@@ -4,8 +4,11 @@ const path = require('path');
 const pages = require('./pages.js');
 
 //Iniciando express
-const server = express()
+const server = express();
 server
+    //Utilizando body da requisição
+    .use(express.urlencoded({extended: true}))
+
     //Utilizando os arquivos estáticos
     .use(express.static('public'))
 
@@ -16,7 +19,8 @@ server
     .get('/index', pages.index) 
     .get('/orphanage', pages.orphanage) 
     .get('/orphanages', pages.orphanages) 
-    .get('/create-orphanage', pages.createOrphanage) 
+    .get('/create-orphanage', pages.createOrphanage)
+    .post('/save-orphanage', pages.saveOrphanage); 
 
 //Ligar o servidor
 server.listen(5500)

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Criar um orfanato | Happy</title>
+    <title>Crie um orfanato | Happy</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -36,13 +36,13 @@
         </footer>
       </aside>
       <main class="animate-appear with-sidebar"> 
-        <form action="">
+        <form action="save-orphanage" method="post" onsubmit="validate(event)">
           	<fieldset>
               <legend>Dados</legend>
               <div class="map-container">
                 <div id="mapid"></div>
-                  <input type="hidden" value="lat">
-                  <input type="hidden" value="lng">
+                  <input type="hidden" name="lat"/>
+                  <input type="hidden" name="lng"/>
                 <footer>
                   <a href="#" id="select-point">Clique no mapa para selecionar a localização</a>
                 </footer>
@@ -63,7 +63,7 @@
                 <label for="images">Foto</label>
                 <div class="images-upload" id="images">
                   <div class="new-upload">
-                    <input name="images" type="text" placeholder="Cole o link da foto aqui" required/>
+                    <input name="images" type="text" placeholder="Cole o link da foto aqui" required type="url"/>
                     <span onclick="deletefield(event)">
                       <img src="/images/remove-file.svg" alt="Remover foto">
                     </span>

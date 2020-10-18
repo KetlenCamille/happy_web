@@ -18,8 +18,8 @@ map.on('click', (event) => {
     const lat  = event.latlng.lat;
     const lng = event.latlng.lng;
 
-    document.querySelector('[name=lat]').value = lat;
-    document.querySelector('[name=lng]').value = lng;
+    document.querySelector("[name=lat]").value = lat;
+    document.querySelector("[name=lng]").value = lng;
 
     //Remove icon
     marker && map.removeLayer(marker)
@@ -67,4 +67,14 @@ function toggleSelect(event){
 
     const input = document.querySelector('[name="open_on_weekends"]')
     input.value = button.dataset.value
+}
+
+function validate(event){
+    const spanLat = document.querySelector('[name="lat"]').value;
+    const spanLng = document.querySelector('[name="lng"]').value;
+    if(spanLat == "" || spanLng == ""){
+        event.preventDefault();
+        alert('Selecione um ponto no mapa')
+        return
+    }
 }
