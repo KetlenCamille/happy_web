@@ -51,6 +51,13 @@ main h1{
     animation-delay: 250ms;
 }
 
+.rodape p{
+    margin-top: 7rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*Desktop version*/
 @media(min-width:760px){
     #container{
